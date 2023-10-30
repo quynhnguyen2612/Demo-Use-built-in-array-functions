@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Nhập số bất kì</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="num" placeholder="Nhập số bất kì"></td>
+            <td><button onclick="check()">result</button></td>
+        </tr>
+    </table>
+    <p id="result"></p>
+    <script>
+        //Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn
+      function check() {
+          let num =  document.getElementById('num').value;
+          let str = num.toString();
+          let result = [str[0]];
+
+          for(let x=1; x<str.length; x++) {
+
+              if((str[x-1]%2 === 0)&&(str[x]%2 === 0)) {
+
+                  result.push('-', str[x]);
+              }
+              else {
+                  result.push(str[x]);
+              }
+          }
+          document.getElementById('result').innerHTML = result.join('');
+
+      }
+
+
+    </script>
+</body>
+</html>
